@@ -5,17 +5,17 @@ import (
 	"net/url"
 )
 
-const TableChangeRequests = "incident"
+const TableIncidentReport = "incident"
 
-func (c Client) GetIncidentReport(query url.Values) ([]IncidentReport, error) {
+func (c Client) GetIncidentReport(query url.Values) ([]IncidentReportItem, error) {
 	var res struct {
-		Records []IncidentReport
+		Records []IncidentReportItem
 	}
-	err := c.GetRecordsFor(TableChangeRequests, query, &res)
+	err := c.GetRecordsFor(TableIncidentReport, query, &res)
 	return res.Records, err
 }
 
-type IncidentReport struct {
+type IncidentReportItem struct {
 	Status                   string      `json:"__status"`
   Opened              string      `json:"opened"`
   ShortDescription              string      `json:"short_description"`
