@@ -22,6 +22,7 @@ const TableCMDB = "cmdb_ci"
 
 ```go
 const TableChangeRequests = "change_request"
+```
 
 #### type IncidentReportItem
 
