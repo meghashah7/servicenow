@@ -8,6 +8,7 @@ import (
 const TableUser = "sys_user"
 
 // GetUsers returns all users that match a query.
+//below code is for demo service now version
 func (c Client) GetUsers(query url.Values) ([]UserItem, error) {
 
 	var res struct {
